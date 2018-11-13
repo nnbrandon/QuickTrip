@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1062786720133",
+    "firebase_url": "https://quicktrip-6e370.firebaseio.com",
+    "project_id": "quicktrip-6e370",
+    "storage_bucket": "quicktrip-6e370.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062786720133:android:e21687cde1761716",
+        "android_client_info": {
+          "package_name": "com.example.brandon.quicktrip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062786720133-jangf18jl1l00pf7q26l80f5jcr8qno9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.brandon.quicktrip",
+            "certificate_hash": "404c551854a9aeea6646897d1bbcf6d290684a47"
+          }
+        },
+        {
+          "client_id": "1062786720133-n8hgqe3sg2djis6hgah6mki29n4b1g5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPJYqXcyfd4yRWyqeNN0LEcQssH8sACGo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062786720133-n8hgqe3sg2djis6hgah6mki29n4b1g5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
