@@ -110,10 +110,10 @@ public class GroceryListActivity extends AppCompatActivity {
         builder.setView(editText);
 
         builder.setPositiveButton("Add", (dialogInterface, i) -> {
-//            String friendEmail = editText.getText().toString().trim();
-//            rootRef.collection("grocerylists").document(friendEmail)
-//                    .collection("userLists").document(groceryListID)
-//                    .set(groceryList);
+            String friendEmail = editText.getText().toString().trim();
+            rootRef.collection("grocerylists").document(friendEmail)
+                    .collection("userLists").document(groceryListID)
+                    .set(groceryList);
         });
 
         builder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
@@ -151,7 +151,7 @@ public class GroceryListActivity extends AppCompatActivity {
                 return true;
 
             case R.id.add_friend:
-//                shareGroceryList();
+                shareGroceryList();
                 return true;
 
             case R.id.sign_out_button:
