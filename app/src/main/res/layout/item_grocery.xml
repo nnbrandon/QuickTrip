@@ -8,10 +8,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/itemName"
-        android:layout_marginTop="16sp"
+        android:layout_marginTop="8sp"
         android:layout_marginStart="8sp"
         android:layout_marginEnd="8sp"
-        android:layout_marginBottom="16sp"
         android:textSize="18sp"
         tools:text="Eggs"
         android:textColor="@android:color/black"/>

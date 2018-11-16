@@ -206,16 +206,17 @@ public class GroceryListActivity extends AppCompatActivity {
         Bundle showBundle = new Bundle();
         showBundle.putBoolean("show", true);
         showGroceryListFragment.setArguments(showBundle);
-        viewPagerAdapter.addFragment(showGroceryListFragment, "GroceryList");
+        viewPagerAdapter.addFragment(showGroceryListFragment, "Grocery List");
+
+        viewPagerAdapter.addFragment(new HistoryFragment(), "History");
 
         //Do not show items to users
         GroceryListFragment noShowGroceryListFragment = new GroceryListFragment();
         Bundle noShowBundle = new Bundle();
         noShowBundle.putBoolean("show", false);
         noShowGroceryListFragment.setArguments(noShowBundle);
-        viewPagerAdapter.addFragment(noShowGroceryListFragment, "ItemList");
+        viewPagerAdapter.addFragment(noShowGroceryListFragment, "Quick Add");
 
-        viewPagerAdapter.addFragment(new HistoryFragment(), "History");
 
         viewPager.setAdapter(viewPagerAdapter);
     }
