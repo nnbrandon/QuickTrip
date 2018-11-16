@@ -16,18 +16,21 @@ import com.example.brandon.quicktrip.models.Item;
 public class ItemViewHolder extends RecyclerView.ViewHolder {
 
     TextView itemName;
+    TextView createdBy;
 
     public ItemViewHolder(View v) {
         super(v);
         itemName = v.findViewById(R.id.itemName);
+        createdBy = v.findViewById(R.id.createdBy);
     }
 
     public void populateItem(Context context, String userEmail, GroceryList groceryList, Item item) {
         String groceryListID = groceryList.getListID();
         String userListName = groceryList.getListName();
         String userItemName = item.getItemName();
-        Log.d("USERITEMNAME", userItemName);
+        String userCreatedBy = item.getCreatedBy();
         itemName.setText(userItemName);
+        createdBy.setText(userCreatedBy);
 
 //        itemView.setOnClickListener(new View.OnClickListener() {
 //            //Move item to another section

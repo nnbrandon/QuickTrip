@@ -15,6 +15,18 @@
         tools:text="Eggs"
         android:textColor="@android:color/black"/>
 
+    <TextView
+        android:id="@+id/createdBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8sp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="-8sp"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:text="User" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
