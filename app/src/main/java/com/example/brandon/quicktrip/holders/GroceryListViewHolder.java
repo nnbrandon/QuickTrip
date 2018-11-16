@@ -62,35 +62,37 @@ public class GroceryListViewHolder extends RecyclerView.ViewHolder {
             }
         });
 
-//        itemView.setOnLongClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//                builder.setTitle("Edit Shopping List Name");
-//
-//                EditText editText = new EditText(context);
-//                editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
-//                editText.setText(userListName);
-//                editText.setSelection(editText.getText().length());
-//                editText.setHint("Type a name");
-//                editText.setHintTextColor(Color.GRAY);
-//                builder.setView(editText);
-//
-//                FirebaseFirestore rootref = FirebaseFirestore.getInstance();
-//                Map<String, Object> map = new HashMap<>();
-//
-//                builder.setPositiveButton("Update", (dialogInterface, i) -> {
-//                    String newGroceryListName = editText.getText().toString().trim();
-//                    map.put("listName", newGroceryListName);
-//                    rootref.collection("grocerylists").document(userEmail).collection("userLists")
-//                            .document(groceryListID).update(map);
-//                });
-//
-//                builder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
-//
-//                AlertDialog alertDialog = builder.create();
-//                alertDialog.show();
-//            }
-//        });
+        itemView.setOnLongClickListener(view-> {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Edit Shopping List Name");
+
+                EditText editText = new EditText(context);
+                editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+                editText.setText(userListName);
+                editText.setSelection(editText.getText().length());
+                editText.setHint("Type a name");
+                editText.setHintTextColor(Color.GRAY);
+                builder.setView(editText);
+
+                FirebaseFirestore rootref = FirebaseFirestore.getInstance();
+                Map<String, Object> map = new HashMap<>();
+
+                builder.setPositiveButton("Update", (dialogInterface, i) -> {
+                    String newGroceryListName = editText.getText().toString().trim();
+                    map.put("listName", newGroceryListName);
+                    rootref.collection("grocerylists").document(userEmail).collection("userLists")
+                            .document(groceryListID).update(map);
+                });
+
+                builder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+                return true;
+            });
     }
+
+
 }

@@ -109,7 +109,7 @@ public class GroceryListFragment extends Fragment {
                 new FirestoreRecyclerAdapter<Item, ItemViewHolder>(firestoreRecyclerOptions) {
                     @Override
                     protected void onBindViewHolder(@NonNull ItemViewHolder holder, int position, @NonNull Item model) {
-                        holder.populateItem(getContext(), userEmail, groceryList, model);
+                        holder.populateItem(getContext(), groceryListView, userEmail, groceryList, model);
                     }
 
                     @Override

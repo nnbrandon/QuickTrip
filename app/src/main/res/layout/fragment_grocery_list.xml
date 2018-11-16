@@ -16,7 +16,6 @@
         android:layout_height="match_parent"
         android:id="@+id/empty"
         android:gravity="center"
-        android:text="No grocery items yet! Add an item!"
         android:visibility="gone"/>
 
     <ProgressBar
