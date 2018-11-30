@@ -25,6 +25,7 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FieldValue;
@@ -113,7 +114,22 @@ public class GroceryListActivity extends AppCompatActivity {
             String friendEmail = editText.getText().toString().trim();
             rootRef.collection("grocerylists").document(friendEmail)
                     .collection("userLists").document(groceryListID)
-                    .set(groceryList);
+                    .set(groceryList).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Map<String, Object> users = new HashMap<>();
+                    Map<String, Object> map = new HashMap<>();
+                    map.put(userEmail, true);
+                    map.put(friendEmail, true);
+                    users.put("users", map);
+                    rootRef.collection("grocerylists").document(userEmail)
+                            .collection("userLists").document(groceryListID)
+                            .update(users);
+                    rootRef.collection("grocerylists").document(friendEmail)
+                            .collection("userLists").document(groceryListID)
+                            .update(users);
+                }
+            });
         });
 
         builder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
