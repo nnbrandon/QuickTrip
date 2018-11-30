@@ -1,11 +1,14 @@
 package com.example.brandon.quicktrip.holders;
 
 import android.app.AlertDialog;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.util.Log;
@@ -27,6 +30,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static android.content.Context.NOTIFICATION_SERVICE;
 
 
 public class ItemViewHolder extends RecyclerView.ViewHolder {
@@ -70,12 +75,12 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
                 @Override
                 public void onSuccess(Void aVoid) {
                     if(show) {
-                        rootref.collection("shoppingLists").document(userEmail)
-                                .collection("userShoppingLists").document(groceryListID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        rootref.collection("grocerylists").document(userEmail)
+                                .collection("userLists").document(groceryListID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                 Map<String, Object> map = (Map<String, Object>) task.getResult().get("users");
-                                String notificationMessage = userName + " has deleted  " + itemName + " from " + groceryListName + "'s list";
+                                String notificationMessage = userName + " has removed " + userItemName + " from " + groceryListName + "'s list.";
                                 NotificationModel notificationModel = new NotificationModel(notificationMessage, userEmail);
 
                                 if (map != null) {
@@ -83,7 +88,7 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
                                         String sharedUserEmail = entry.getKey();
 
                                         if(!sharedUserEmail.equals(userEmail)){
-                                            rootref.collection("notification").document(sharedUserEmail)
+                                            rootref.collection("notifications").document(sharedUserEmail)
                                                     .collection("userNotifications").document()
                                                     .set(notificationModel);
                                         }

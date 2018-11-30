@@ -122,11 +122,11 @@ public class GroceryListActivity extends AppCompatActivity {
                     map.put(userEmail, true);
                     map.put(friendEmail, true);
                     users.put("users", map);
-                    rootRef.collection("shoppingLists").document(userEmail)
-                            .collection("userShoppingLists").document(groceryListID)
+                    rootRef.collection("grocerylists").document(userEmail)
+                            .collection("userLists").document(groceryListID)
                             .update(users);
-                    rootRef.collection("shoppingLists").document(friendEmail)
-                            .collection("userShoppingLists").document(groceryListID)
+                    rootRef.collection("grocerylists").document(friendEmail)
+                            .collection("userLists").document(groceryListID)
                             .update(users);
                 }
             });
