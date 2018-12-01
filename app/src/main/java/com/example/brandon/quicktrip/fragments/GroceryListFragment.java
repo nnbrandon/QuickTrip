@@ -145,7 +145,7 @@ public class GroceryListFragment extends Fragment {
 
     private void addGroceryItem(String itemName) {
         String itemID = groceryListItemRef.document().getId();
-        Item item = new Item(itemID, itemName, show, userName);
+        Item item = new Item(itemID, itemName, true, userName);
         Log.d("NEWITEM", "check it out " + item.getCreatedBy());
         groceryListItemRef.document(itemID).set(item);
     }
