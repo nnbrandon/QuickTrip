@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.brandon.quicktrip.R;
 import com.example.brandon.quicktrip.activities.GroceryListActivity;
@@ -61,14 +62,15 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
                 .collection("groceryListItems").document(itemID);
 
         itemView.setOnClickListener(view-> {
-            //Move item to History section
             Map<String, Object> map = new HashMap<>();
 
             if(show) {
                 map.put("show", false);
+                Toast.makeText(context, "Checked off!", Toast.LENGTH_SHORT).show();
             }
             else {
                 map.put("show", true);
+                Toast.makeText(context, "Added back to Grocery List!", Toast.LENGTH_SHORT).show();
             }
 
             itemIDRef.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -119,6 +121,7 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
                 Map<String, Object> map = new HashMap<>();
                 map.put("itemName", newItemName);
                 itemIDRef.update(map);
+                Toast.makeText(context, "Item has been updated!", Toast.LENGTH_SHORT).show();
             });
 
             builder.setNegativeButton("Delete", (dialogInterface, i) -> {
@@ -126,6 +129,8 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Snackbar.make(groceryListView, "Item deleted!", Snackbar.LENGTH_LONG).show();
+                        Toast.makeText(context, "Item deleted!", Toast.LENGTH_SHORT).show();
+
                     }
                 });
             });
