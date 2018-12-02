@@ -27,13 +27,20 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:layout_marginEnd="16dp"
-        android:src="@android:drawable/ic_menu_add"
         android:clickable="true"
-        android:focusable="true"/>
+        android:focusable="true"
+        android:scaleType="center"
+        android:src="@android:drawable/ic_menu_add"
+        android:tint="@color/colorPrimaryDark"
+        app:backgroundTint="@android:color/white"
+        app:fabCustomSize="68dp"
+        app:fabSize="auto"
+        app:maxImageSize="50dp"
+        tools:src="@drawable/ic_action_name" />
 
 </android.support.design.widget.CoordinatorLayout>
