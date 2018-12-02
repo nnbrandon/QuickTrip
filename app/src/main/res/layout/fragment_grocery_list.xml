@@ -35,12 +35,12 @@
         android:clickable="true"
         android:focusable="true"
         android:scaleType="center"
-        android:src="@android:drawable/ic_menu_add"
+        android:src="@drawable/ic_action_name"
         android:tint="@color/colorPrimaryDark"
         app:backgroundTint="@android:color/white"
         app:fabCustomSize="68dp"
         app:fabSize="auto"
         app:maxImageSize="50dp"
-        tools:src="@drawable/ic_action_name" />
+        app:elevation="12dp"/>
 
 </android.support.design.widget.CoordinatorLayout>
