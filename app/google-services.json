@@ -31,6 +31,22 @@
           }
         },
         {
+          "client_id": "1062786720133-t7elf1cci9aapah702i1kp6981e1lvtd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.brandon.quicktrip",
+            "certificate_hash": "c87bd3c7a35d44bc3b74e77f4ae36ec2d3cdf0e4"
+          }
+        },
+        {
+          "client_id": "1062786720133-8a8hrju4c45l5eu440gdu5oa3l9nlncu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.brandon.quicktrip",
+            "certificate_hash": "1feda336a50974857e6987e296b496de8c3c4515"
+          }
+        },
+        {
           "client_id": "1062786720133-n8hgqe3sg2djis6hgah6mki29n4b1g5c.apps.googleusercontent.com",
           "client_type": 3
         }
