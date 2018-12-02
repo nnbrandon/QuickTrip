@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -51,7 +52,7 @@ public class QuickAddFragment extends ListFragment {
     private GoogleApiClient googleApiClient;
     private FirestoreRecyclerAdapter<Item, ItemViewHolder> firestoreRecyclerAdapter;
 
-    String[] items = {"milk", "eggs"};
+    String[] items = {"Milk", "Eggs"};
     int[] images = {R.drawable.milk, R.drawable.eggs};
 
     ArrayList<HashMap<String, String>> data = new ArrayList<HashMap<String, String>>();
@@ -119,9 +120,7 @@ public class QuickAddFragment extends ListFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 addGroceryItem(data.get(position).get("Item"));
-                Toast.makeText(getActivity(), data.get(position).get("Item"), Toast.LENGTH_SHORT).show();
-
-
+                Toast.makeText(getActivity(), "Added " + data.get(position).get("Item"), Toast.LENGTH_SHORT).show();
             }
         });
     }
