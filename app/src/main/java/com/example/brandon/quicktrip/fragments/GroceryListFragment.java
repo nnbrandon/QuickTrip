@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -46,10 +47,12 @@ public class GroceryListFragment extends Fragment {
     private GoogleApiClient googleApiClient;
     private FirestoreRecyclerAdapter<Item, ItemViewHolder> firestoreRecyclerAdapter;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View groceryListView = inflater.inflate(R.layout.fragment_grocery_list, container, false);
+
 
         Bundle bundle = getArguments();
         show = bundle.getBoolean("show");
