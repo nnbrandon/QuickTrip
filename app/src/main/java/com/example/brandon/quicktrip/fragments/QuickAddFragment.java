@@ -52,8 +52,21 @@ public class QuickAddFragment extends ListFragment {
     private GoogleApiClient googleApiClient;
     private FirestoreRecyclerAdapter<Item, ItemViewHolder> firestoreRecyclerAdapter;
 
-    String[] items = {"Milk", "Eggs"};
-    int[] images = {R.drawable.milk, R.drawable.eggs};
+    String[] items = {"Milk", "Eggs", "Rice", "Cereal", "Bread", "Steak", "Juice", "Banana", "Broccoli", "Sausage", "Bacon", "Salmon", "Cheese",};
+    int[] images = {
+            R.drawable.milk,
+            R.drawable.eggs,
+            R.drawable.rice,
+            R.drawable.cereal,
+            R.drawable.bread,
+            R.drawable.steak,
+            R.drawable.juice,
+            R.drawable.banana,
+            R.drawable.broccoli,
+            R.drawable.sausage,
+            R.drawable.bacon,
+            R.drawable.salmon,
+            R.drawable.cheese};
 
     ArrayList<HashMap<String, String>> data = new ArrayList<HashMap<String, String>>();
     SimpleAdapter adapter;
