@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -151,6 +152,7 @@ public class GroceryListFragment extends Fragment {
         Item item = new Item(itemID, itemName, true, userName);
         Log.d("NEWITEM", "check it out " + item.getCreatedBy());
         groceryListItemRef.document(itemID).set(item);
+        Toast.makeText(getContext(), "Added " + itemName + " to your list", Toast.LENGTH_SHORT).show();
     }
 
     @Override

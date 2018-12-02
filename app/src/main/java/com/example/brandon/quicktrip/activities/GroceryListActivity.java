@@ -15,7 +15,6 @@ import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.brandon.quicktrip.R;
 import com.example.brandon.quicktrip.fragments.GroceryListFragment;

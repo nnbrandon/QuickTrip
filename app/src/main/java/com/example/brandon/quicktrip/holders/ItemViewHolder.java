@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
@@ -12,8 +13,11 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,11 +70,16 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
 
             if(show) {
                 map.put("show", false);
-                Toast.makeText(context, "Checked off!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "Checked off", Toast.LENGTH_SHORT).show();
+                Toast toast = new Toast(context);
+                ImageView newview = new ImageView(context);
+                newview.setImageResource(R.drawable.checkmark);
+                toast.setView(newview);
+                toast.show();
             }
             else {
                 map.put("show", true);
-                Toast.makeText(context, "Added back to Grocery List!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Added back to Grocery List", Toast.LENGTH_SHORT).show();
             }
 
             itemIDRef.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -129,8 +138,12 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Snackbar.make(groceryListView, "Item deleted!", Snackbar.LENGTH_LONG).show();
-                        Toast.makeText(context, "Item deleted!", Toast.LENGTH_SHORT).show();
-
+//                        Toast.makeText(context, "Item deleted!", Toast.LENGTH_SHORT).show();
+                        Toast toast = new Toast(context);
+                        ImageView newview = new ImageView(context);
+                        newview.setImageResource(R.drawable.xmark);
+                        toast.setView(newview);
+                        toast.show();
                     }
                 });
             });

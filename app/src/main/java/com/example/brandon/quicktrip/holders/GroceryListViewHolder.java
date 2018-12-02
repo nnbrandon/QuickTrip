@@ -84,7 +84,7 @@ public class GroceryListViewHolder extends RecyclerView.ViewHolder {
                     map.put("listName", newGroceryListName);
                     rootref.collection("grocerylists").document(userEmail).collection("userLists")
                             .document(groceryListID).update(map);
-                    Toast.makeText(context, "Edited Grocery List Name!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Edited Grocery List Name", Toast.LENGTH_SHORT).show();
                 });
 
                 builder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
