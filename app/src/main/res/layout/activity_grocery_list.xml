@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
-        android:theme="@style/AppTheme.AppBarOverlay"></android.support.design.widget.AppBarLayout>
+        android:theme="@style/AudioFileInfoOverlayText"></android.support.design.widget.AppBarLayout>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"

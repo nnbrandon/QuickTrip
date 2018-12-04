@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.MainActivity"
+    >
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"></android.support.v7.widget.RecyclerView>
+        android:background="@color/background_material_light"
+        android:scrollbars="none"></android.support.v7.widget.RecyclerView>
 
     <TextView
         android:layout_width="match_parent"
@@ -29,13 +31,21 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:layout_marginEnd="16dp"
-        android:src="@android:drawable/ic_menu_add"
         android:clickable="true"
-        android:focusable="true"/>
+        android:focusable="true"
+        android:scaleType="center"
+        android:tint="@color/colorPrimaryDark"
+        app:backgroundTint="@android:color/white"
+        app:elevation="6dp"
+        app:fabCustomSize="68dp"
+        app:fabSize="auto"
+        app:maxImageSize="50dp"
+ />
+
 
 </android.support.design.widget.CoordinatorLayout>

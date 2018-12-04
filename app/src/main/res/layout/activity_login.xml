@@ -23,7 +23,8 @@
         android:layout_gravity="center"></com.google.android.gms.common.SignInButton>
 
     <TextView
-        android:id="@+id/welcome"
+        android:id="@+id/welcomeb"
+        style="@style/AudioFileInfoOverlayText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -31,8 +32,25 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="0dp"
         android:gravity="center"
-        android:text="QUICKTRIP"
-        android:textColor="@android:color/black"
-        android:textSize="60sp" />
+        android:text="QuickTrip"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="#000000"
+        android:textSize="74sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/welcome"
+        style="@style/AudioFileInfoOverlayText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="0dp"
+        android:gravity="center"
+        android:text="QuickTrip"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="72sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
