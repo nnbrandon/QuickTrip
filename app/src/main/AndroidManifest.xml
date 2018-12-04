@@ -18,8 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.MainActivity"
-            android:theme="@style/QuickTrip" />
-        <activity android:name=".activities.GroceryListActivity"></activity>
+            android:theme="@style/QuickTrip"/>
+        <activity android:name=".activities.GroceryListActivity"
+            android:parentActivityName=".activities.MainActivity"></activity>
     </application>
 
 </manifest>

@@ -15,11 +15,10 @@ import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.brandon.quicktrip.R;
 import com.example.brandon.quicktrip.fragments.GroceryListFragment;
-import com.example.brandon.quicktrip.fragments.HistoryFragment;
+import com.example.brandon.quicktrip.fragments.QuickAddFragment;
 import com.example.brandon.quicktrip.models.GroceryList;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -232,7 +231,11 @@ public class GroceryListActivity extends AppCompatActivity {
         viewPagerAdapter.addFragment(noShowGroceryListFragment, "Checked Off");
 
         //Quick Add feature that we will implement
-        viewPagerAdapter.addFragment(new HistoryFragment(), "Quick Add");
+//        QuickAddFragment showQuickAddFragment = new QuickAddFragment();
+//        Bundle showBundle2 = new Bundle();
+//        showBundle.putBoolean("show", false);
+//        showQuickAddFragment.setArguments(showBundle2);
+        viewPagerAdapter.addFragment(new QuickAddFragment(), "Quick Add");
 
         viewPager.setAdapter(viewPagerAdapter);
     }
