@@ -40,6 +40,7 @@
         android:focusable="true"
         android:scaleType="center"
         android:tint="@color/colorPrimaryDark"
+        android:src="@drawable/ic_action_name"
         app:backgroundTint="@android:color/white"
         app:elevation="6dp"
         app:fabCustomSize="68dp"

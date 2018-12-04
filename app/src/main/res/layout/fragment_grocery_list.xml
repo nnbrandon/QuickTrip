@@ -35,6 +35,7 @@
         android:clickable="true"
         android:focusable="true"
         android:scaleType="center"
+        android:src="@drawable/ic_action_name"
         android:tint="@color/colorPrimaryDark"
         app:backgroundTint="@android:color/white"
         app:fabCustomSize="68dp"
